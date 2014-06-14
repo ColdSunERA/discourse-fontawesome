@@ -1,8 +1,10 @@
+//Use: [fa:iconname] ex [fa:circle]
+
 function fontawesome(text) {
   //Expression to find.
-  var re = /\[head:([a-zA-Z0-9]+)]/;
+  var re = /\[fa:([a-zA-Z0-9]+)]/;
   // Adjust text.
-  var adjusted = text.replace(re, "<img src=\"http://cravatar.eu/helmavatar/" + "$1" + "/16.png\">");
+  var adjusted = text.replace(re, "<i class=\"fa fa-" + "$1" + "\"></i>");
   return adjusted;
 }
 
