@@ -4,6 +4,7 @@ function fontawesome(text) {
   //Expression to find.
   var re = /\[fa:\s*([a-zA-Z0-9-\s]+)]/;
   // Adjust text.
+  //\[fa:\s*([a-zA-Z0-9-]+)\s*([a-zA-Z0-9-]+)]
   var adjusted = text.replace(re, "<i class=\"fa fa-" + "$1" + "\"></i>");
   // Return.
   return adjusted;
