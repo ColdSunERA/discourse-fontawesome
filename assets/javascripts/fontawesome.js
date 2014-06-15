@@ -7,7 +7,7 @@ function fontawesome(text) {
     
   if(arg.test(text)){
     // Argument found
-    var adjusted = text.replace(re, "<i class=\"fa fa-$1 fa:$2\"></i>");
+    var adjusted = text.replace(re, "<i class=\"fa fa-$1 fa-$2\"></i>");
   } else {
     // No argument found
     var adjusted = text.replace(re, "<i class=\"fa fa-$1\"></i>");        
