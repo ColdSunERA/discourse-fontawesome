@@ -1,6 +1,8 @@
 //Use: [fa:iconname] ex [fa:circle]
 
 function fontawesome(text) {
+  text.replace("[stack]", "<span class=\"fa-stack\"").replace("[/stack]", "</span>");
+  
   var re = /\[fa:\s*([a-zA-Z0-9-]+)\s*([a-zA-Z0-9-]*)]/;   
   var args = (srctext.replace(re, "$1")).split(" ");
     if (args.length > 0) {
