@@ -13,7 +13,6 @@ function fontawesome(text) {
     }
     adjusted = adjusted + "\"></i>";
     return adjusted;
-    }
   } else {
   return text;
 }
