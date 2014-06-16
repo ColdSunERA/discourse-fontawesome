@@ -1,9 +1,7 @@
 //Use: [fa:iconname] ex [fa:circle]
 
 function fontawesome(text) {
-
-  //Expressions to find.
-  var re = /\[fa:\s*([a-zA-Z0-9-]+)\s*([a-zA-Z0-9-]*)]/;    
+  var re = /\[fa:\s*([a-zA-Z0-9-]+)\s*([a-zA-Z0-9-]*)]/;   
   var args = (srctext.replace(re, "$1")).split(" ");
     if (args.length > 0) {
         var adjusted = "<i class=\"fa ";
@@ -13,21 +11,6 @@ function fontawesome(text) {
         adjusted = (adjusted + "\"></i>").replace(" \"", "\"");;
     }
     adjusted = adjusted + "\"></i>");
-
-  
-  /*
-  var arg = /\[fa:\s*[a-zA-Z0-9-]+\s+([a-zA-Z0-9-]+)]/; // We'll use this to detect arguments
-    
-  if(arg.test(text)){
-    // Argument found
-    var adjusted = text.replace(re, "<i class=\"fa fa-$1 fa-$2\"></i>");
-  } else {
-    // No argument found
-    var adjusted = text.replace(re, "<i class=\"fa fa-$1\"></i>");        
-  }  
-  */
-
-  // Return.
   return adjusted;
 }
 
