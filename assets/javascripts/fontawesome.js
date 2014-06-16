@@ -12,7 +12,7 @@ function fontawesome(text) {
         }
         adjusted = (adjusted + "\"></i>").replace(" \"", "\"");;
     }
-    adjusted = adjusted + "\"></i>");
+    adjusted = adjusted + "\"></i>";
   return adjusted;
 }
 
@@ -27,14 +27,3 @@ Discourse.Dialect.postProcessText(function (text) {
   }
   return text;
 });
-
-/*
-Discourse.Dialect.inlineBetween({
-    start: '[stack]',
-    stop: '[/stack]',
-    rawContents: true,
-    emitter: function (contents) {
-        return '<span class' + contents + '\\]';
-    }
-});
-*/
