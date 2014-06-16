@@ -1,9 +1,10 @@
 //Use: [fa:iconname] ex [fa:circle]
 
 function fontawesome(text) {
-  var re = /\[fa:\s*([a-zA-Z0-9-]+)\s*([a-zA-Z0-9-]*)]/;   
-  var args = (text.replace(re, "$1")).split(" ");
-    if (args.length > 0) {
+  if (text.contains("[fa:")) {
+      var re = /\[fa:\s*([a-zA-Z0-9-]+)\s*([a-zA-Z0-9-]*)]/;   
+      var args = (text.replace(re, "$1")).split(" ");
+      if (args.length > 0) {
         var adjusted = "<i class=\"fa ";
         for (var i = 0; i < args.length; i++) {
             adjusted = adjusted + "fa-" + args[i] + " ";
@@ -12,6 +13,8 @@ function fontawesome(text) {
     }
     adjusted = adjusted + "\"></i>";
   return adjusted;
+  } else {
+  return text;
 }
 
 Discourse.Dialect.postProcessText(function (text) {
