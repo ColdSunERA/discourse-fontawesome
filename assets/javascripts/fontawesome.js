@@ -1,21 +1,27 @@
 //Use: [fa:iconname] ex [fa:circle]
 
 function fontawesome(text) {
-    var re = /\[fa:\s*([a-zA-Z0-9-]+)\s*([a-zA-Z0-9-]*)]/g;   
+    // The expression we're looking for.
+    var re = /\[fa:\s*([a-zA-Z0-9-]+)\s*([a-zA-Z0-9-]*)]/g;
+    // Check to see if our regex is found.
     if (text.search(re)) {
-      var args = (text.replace(re, "$1")).split(" ");
-      if (args.length > 0) {
-        var adjusted = "<i class=\"fa ";
-        for (var i = 0; i < args.length; i++) {
-            adjusted = adjusted + "fa-" + args[i] + " ";
+        // Find potential arguments.
+        var args = (text.replace(re, "$1")).split(" ");
+        // Check our arguments.
+        if (args.length > 0) {
+            // Start adjusting.
+            var adjusted = "<i class=\"fa ";
+            for (var i = 0; i < args.length; i++) {
+                // Cycle through arguments and add each one.
+                adjusted = adjusted + "fa-" + args[i] + " ";
+            }
+            // Close our HTML.
+            adjusted = (adjusted + "\"></i>").replace(" \"", "\"");;
         }
-        adjusted = (adjusted + "\"></i>").replace(" \"", "\"");;
+        return adjusted;
+    } else {
+        return text;
     }
-    adjusted = adjusted + "\"></i>";
-    return adjusted;
-  } else {
-  return text;
-  }
 }
 
 Discourse.Dialect.postProcessText(function (text) {
@@ -27,17 +33,5 @@ Discourse.Dialect.postProcessText(function (text) {
       text[i] = fontawesome(text[i]);
     }
   }
-  //replaceBBCode('stack', function(text) { return ['span', {'class': 'fa-stack'}].concat(text); });
   return text;
 });
-
-/*
-Discourse.Dialect.inlineBetween({
-    start: '[stack]',
-    stop: '[/stack]',
-    rawContents: true,
-    emitter: function (contents) {
-        return '<span class' + contents + '\\]';
-    }
-});
-*/
