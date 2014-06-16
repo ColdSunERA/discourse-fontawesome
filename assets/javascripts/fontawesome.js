@@ -1,7 +1,7 @@
 //Use: [fa:iconname] ex [fa:circle]
 
 function fontawesome(text) {
-    var re = /\[fa:\s*([a-zA-Z0-9-]+)\s*([a-zA-Z0-9-]*)]/;   
+    var re = /\[fa:\s*([a-zA-Z0-9-]+)\s*([a-zA-Z0-9-]*)]/g;   
     if (text.search(re)) {
       var args = (text.replace(re, "$1")).split(" ");
       if (args.length > 0) {
