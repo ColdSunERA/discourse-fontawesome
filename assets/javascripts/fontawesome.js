@@ -4,7 +4,7 @@ function fontawesome(text) {
     // The expression we're looking for.
     var re = /\[fa:\s*([a-zA-Z0-9-]+)\s*([a-zA-Z0-9-]*)]/g;
     // Check to see if our regex is found.
-    if (text.search(re)) {
+    if (re.test(text)) {
         // Find potential arguments.
         var args = (text.replace(re, "$1")).split(" ");
         // Check our arguments.
