@@ -22,7 +22,10 @@ Discourse.Dialect.postProcessText(function (text) {
   for (var i = 0; i < text.length; i++) {
     if (text[i].length > 0 && text[i][0] !== "<") {
       // Send our text to the processor.
-      text[i] = fontawesome(text[i]);
+      var words = text[i].split(" ");
+        for (var ii = 0; ii < words.length; ii++) {
+          words[i] = fontawesome(words[i]);
+        }
     }
   }
   return text;
