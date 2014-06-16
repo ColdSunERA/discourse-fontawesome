@@ -2,7 +2,7 @@
 
 function fontawesome(text) {
   var re = /\[fa:\s*([a-zA-Z0-9-]+)\s*([a-zA-Z0-9-]*)]/;   
-  var args = (srctext.replace(re, "$1")).split(" ");
+  var args = (text.replace(re, "$1")).split(" ");
     if (args.length > 0) {
         var adjusted = "<i class=\"fa ";
         for (var i = 0; i < args.length; i++) {
