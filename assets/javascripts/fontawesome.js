@@ -1,8 +1,6 @@
 //Use: [fa:iconname] ex [fa:circle]
 
 function fontawesome(text) {
-  //text.replace("[stack]", "<span class=\"fa-stack\"").replace("[/stack]", "</span>");
-  
   var re = /\[fa:\s*([a-zA-Z0-9-]+)\s*([a-zA-Z0-9-]*)]/;   
   var args = (srctext.replace(re, "$1")).split(" ");
     if (args.length > 0) {
@@ -25,5 +23,17 @@ Discourse.Dialect.postProcessText(function (text) {
       text[i] = fontawesome(text[i]);
     }
   }
+  //replaceBBCode('stack', function(text) { return ['span', {'class': 'fa-stack'}].concat(text); });
   return text;
 });
+
+/*
+Discourse.Dialect.inlineBetween({
+    start: '[stack]',
+    stop: '[/stack]',
+    rawContents: true,
+    emitter: function (contents) {
+        return '<span class' + contents + '\\]';
+    }
+});
+*/
