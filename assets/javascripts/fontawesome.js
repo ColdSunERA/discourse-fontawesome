@@ -23,6 +23,7 @@ Discourse.Dialect.postProcessText(function (text) {
       text[i] = fontawesome(text[i]);
     }
   }
+  replaceBBCode('stack', function(contents) { return ['span', {'class': 'fa-stack'}].concat(contents); });
   return text;
 });
 
@@ -36,5 +37,3 @@ Discourse.Dialect.inlineBetween({
     }
 });
 */
-
-replaceBBCode('stack', function(contents) { return ['span', {'class': 'fa-stack'}].concat(contents); });
