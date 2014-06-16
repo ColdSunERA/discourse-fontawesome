@@ -4,18 +4,15 @@ function fontawesome(text) {
 
   //Expressions to find.
   var re = /\[fa:\s*([a-zA-Z0-9-]+)\s*([a-zA-Z0-9-]*)]/;    
-  var args = (text.split(" "));
-  if (args.length > 0) {
-    
-    // Argument found.
-    var adjusted = text.replace(re, "<i class=\"fa fa-$1 ");
-    for (var i = 0; i < args.length; i++) {
-      adjusted = adjusted + "fa-" + args[i];
+  var args = (srctext.replace(re, "$1")).split(" ");
+    if (args.length > 0) {
+        var adjusted = "<i class=\"fa ";
+        for (var i = 0; i < args.length; i++) {
+            adjusted = adjusted + "fa-" + args[i] + " ";
+        }
+        adjusted = (adjusted + "\"></i>").replace(" \"", "\"");;
     }
     adjusted = adjusted + "\"></i>");
-  } else {
-    var adjusted = text.replace(re, "<i class=\"fa fa-$1\"></i>");       
-  }
 
   
   /*
