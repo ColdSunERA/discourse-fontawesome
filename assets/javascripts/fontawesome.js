@@ -15,6 +15,7 @@ function fontawesome(text) {
     return adjusted;
   } else {
   return text;
+  }
 }
 
 Discourse.Dialect.postProcessText(function (text) {
