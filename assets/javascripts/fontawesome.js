@@ -23,7 +23,6 @@ Discourse.Dialect.postProcessText(function (text) {
       text[i] = fontawesome(text[i]);
     }
   }
-  replaceBBCode('stack', function(text) { return ['span', {'class': 'fa-stack'}].concat(text); });
   return text;
 });
 
