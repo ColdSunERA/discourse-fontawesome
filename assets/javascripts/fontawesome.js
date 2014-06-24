@@ -16,7 +16,7 @@ function fontawesome(text) {
                 adjusted = adjusted + "fa-" + args[i] + " ";
             }
             // Close our HTML.
-            adjusted = (adjusted + "\"></i>").replace(" \"", "\"");;
+            adjusted = (adjusted + "\"></i>").replace(" \"", "\"");
         }
         return adjusted;
     } else {
