@@ -2,7 +2,7 @@
 
 function fontawesome(text) {
     // The expression we're looking for.
-    var re = /\[fa:\s*([a-zA-Z0-9-]+)\s*([a-zA-Z0-9-]*)]/g;
+    var re = /\[fa:\s*([a-zA-Z0-9-\s]*)]/g;
     // Check to see if our regex is found.
     if (re.test(text)) {
         // Find potential arguments.
