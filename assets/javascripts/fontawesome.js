@@ -4,7 +4,7 @@
     matcher: /^\[fa:([a-z\-]+)\]/,
     emitter: function(contents) {
       var icon = contents[1];
-      consoloe.log(icon);
+      console.log(icon);
       return ['i', {class: ['fa fa-' + icon]} ];
     }
   });
