@@ -7,5 +7,5 @@
       return ['i', {class: ['fa fa-' + icon]} ];
     }
   });
-  Discourse.Markdown.whiteListTag('i', 'class', /fa fa-([a-z\-]+)/);
+  Discourse.Markdown.whiteListTag('i', 'class', /fa fa-[a-z-]+/);
 })();
